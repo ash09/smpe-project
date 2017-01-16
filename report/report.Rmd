@@ -1,0 +1,93 @@
+---
+title: "Analysis of Facebook Posts"
+author: "Ali Jawad Fahs, Ashley Lesdalons, Nayanika Dogra and Onss Bousbih"
+date: "16th January 2017"
+output: 
+  pdf_document: default
+  html_document: default
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE)
+```
+
+## Abstract
+
+
+
+## Introduction
+Since the creation of social networks such as Facebook and Twitter, the number of users has increased from 1 billion in 2013 to almost 2 billion today, predicting even a bigger increase in the next years. Considering this rapid development, social media may become the most important media channel for brands to reach their clients in the near future.
+
+Realizing the potential of Internet-based social networks, companies use social networks  to leverage their businesses. Several studies have been conducted to predict the relation between the online publications on social networks and the impact of such publications measured by users' interactions. We made a similar study to understand the impact of advertisement on Facebook on the number of views and interactions to find out the benefits of putting advertisements of social networks.  
+
+The data set studied in this paper is a representative data set of published posts on the Facebook's page of a renowned cosmetic brand between the 1st of January and the 31st of December in 2014. It was found on the UC Irvine Machine Learning Repository.
+The data set comprises of the following attributes:
+ 
+* Page Total Likes: The number of likes a page has on all its posts.
+
+* Type: This is the type of the post i.e photo or link.
+
+* Post Month: This is the month in which the post was published.
+
+* Post Weekday: This is the day of the week on which the post was published.
+
+* Post Hour: This is the hour of the day at which the post was published.
+
+* Paid: This tells if the post is paid or non paid.
+
+* Post Viewers: This is the number of users who viewed the post.
+
+* Comment: Number of comments on the post.
+
+* Like: Number of likes on the post.
+
+* Share: Number of times a post was shared.
+
+* Total Interaction: It gives the summation of the comment, like and share.
+
+
+Using the above data set we verified the following observations:
+
+* Number of views to be expected in case of paid posts.
+
+* Number of views to be expected in case of unpaid posts. The above two observations helped us in finding out the effectiveness of advertising on Facebook.
+
+* Correlation between number of views on a post and number of interactions with the post.
+  This shows that the number of views are directly related to number of interactions.
+
+* Relation between type of a post and number of views and interactions associated with it.
+
+* Relation between time of the post and number of views on the post.
+
+## Material and Methods
+
+* Mean: It is the average and is computed as the sum of all the observed outcomes  from the sample divided by the total number of events. It is given as:
+
+$$ \overline{x} = \frac{1}{n}  \sum_{i=1}^n   x   $$
+
+* Variance: It is the expectation of the squared deviation of a random variable from its mean, and it informally measures how far a set of (random) numbers are spread out from their mean.
+
+$$ S^{2} = \frac{1}{n-1}  \sum_{i=1}^n (x- \overline{x} )^2 $$
+
+* Standard Deviation: It is a measure that is used to quantify the amount of variation or dispersion of a set of data values.
+
+$$ S = \sqrt{ \frac{1}{n-1}  \sum_{i=1}^n (x- \overline{x} )^2} $$
+
+* Confidence Interval: It a range of values so defined that there is a specified probability that the value of a parameter lies within it.
+
+$$  \overline{x} \pm  t^{*}  \frac{s}{ \sqrt{n} } $$
+
+* Covariance: It is a measure of the joint variability of two random variables.
+
+$$  cov(X,Y)=E[(X- \mu x)(Y- \mu y)] $$
+
+
+* Correlation: Correlation is a statistical measure that indicates the extent to which two or more variables fluctuate together. 
+
+$$ \rho x,y = corr(X,Y) = \frac{cov(X,Y)}{  \rho _{x}   \rho _{y} } =  \frac{E[(X- \mu x)(Y- \mu y)]}{\rho _{x}   \rho _{y}}  $$
+
+
+## Statistical Analysis of the Data 
+
+## Conclusion
+
+

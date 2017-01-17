@@ -86,8 +86,153 @@ $$  cov(X,Y)=E[(X- \mu x)(Y- \mu y)] $$
 $$ \rho x,y = corr(X,Y) = \frac{cov(X,Y)}{  \rho _{x}   \rho _{y} } =  \frac{E[(X- \mu x)(Y- \mu y)]}{\rho _{x}   \rho _{y}}  $$
 
 
-## Statistical Analysis of the Data 
+## Statistical Analysis of the Data
 
+
+```r
+
+paid.data<-read.csv("obj1.csv",header=TRUE)
+paid.views<-c(0)
+for(i in 1:180)
+  paid.views[i]=0
+for(i in 1:139)
+  paid.views[floor(paid.data$post.viewers.for.paid[i]/1000)]=1+paid.views[floor(paid.data$post.viewers.for.paid[i]/1000)]
+
+df= as.data.frame(cbind(Overall.Cond= 1:180, paid.views))
+df
+df.freq= as.vector(rep(df$Overall.Cond, df$paid.views))
+hist(df.freq,breaks = 300,plot = TRUE,xlim = c(0,50))
+axis(side=2, at=c(0,5,10,15,20,25))
+axis(side=1, at=c(0:25)*5)
+
+```
+
+![](/Users/nayanikadogra/workspace/smpe-project/results/obj1.png)
+
+```r
+
+nonpaid.data<-read.csv("obj2.csv",header=TRUE)
+nonpaid.views<-c(0)
+for(i in 1:180)
+  nonpaid.views[i]=0
+for(i in 1:361)
+  nonpaid.views[floor(nonpaid.data$post.viewers.for.non.paid[i]/1000)]=1+nonpaid.views[floor(nonpaid.data$post.viewers.for.non.paid[i]/1000)]
+
+df= as.data.frame(cbind(Overall.Cond= 1:180, nonpaid.views))
+df
+df.freq= as.vector(rep(df$Overall.Cond, df$nonpaid.views))
+hist(df.freq,breaks = 300,plot = TRUE,col="green",xlim = c(0,50),main="non paid post views frequency",xlab="post viewers in 1000 views")
+axis(side=2, at=c(0,5,10,15,20,25,30))
+axis(side=1, at=c(0:10)*10)
+
+```
+
+![](/Users/nayanikadogra/workspace/smpe-project/results/obj 2.png)
+
+
+
+
+```r
+
+m1<-mean(paid.data$post.viewers.for.paid)
+m1
+m2<-mean(nonpaid.data$post.viewers.for.non.paid)
+m2
+
+m3<-mean(paid.data$Total.Interactions)
+m3
+m4<-mean(nonpaid.data$Total.Interactions)
+m4
+
+s1<-sd(paid.data$post.viewers.for.paid)
+s1
+s2<-sd(nonpaid.data$post.viewers.for.non.paid)
+s2
+
+s3<-sd(paid.data$Total.Interactions)
+s3
+s4<-sd(nonpaid.data$Total.Interactions)
+s4
+
+t=1.96
+n1=139
+n2=361
+d1=t*(s1/sqrt(n1))
+d2=t*(s2/sqrt(n2))
+d1 
+d2
+
+```
+
+
+```r
+
+MyData3 <- read.csv(file="obj3.csv", header=TRUE)
+
+question3 =ggplot(data = MyData3, aes(MyData3$post.viewers,MyData3$Total.Interactions, color = MyData3$CBO2002)) +geom_point(color="red") + labs(y = "Post viewers", x = "Total Interactions") + geom_smooth(method= "lm",color= "black", formula = y ~ 0 + x)+ggtitle("Correlation between The post views and The number of interaction")
+
+
+```
+![](/Users/nayanikadogra/workspace/smpe-project/results/obj3.png)
+![](/Users/nayanikadogra/workspace/smpe-project/results/obj33.png)
+
+
+```r
+MyData4 <- read.csv(file="obj4.csv", header=TRUE)
+fill <- "#4271AE"
+line <- "#1F3552"
+
+question4 = ggplot(data = MyData4, aes(x = MyData4$Type, y = MyData4$Total.Interactions))+geom_boxplot(fill = fill, colour = line,alpha = 0.4)+scale_y_continuous(name = "Total Interactions",breaks = seq(0, 2000, 100),limits=c(0, 2000))+scale_x_discrete(name = "Type of Post") + ggtitle("Interactions by Type")
+
+question4
+
+fill <- "gold1"
+line <- "goldenrod2"
+question4 = ggplot(data = MyData4, aes(x = MyData4$Type, y = MyData4$post.viewers))+geom_boxplot(fill = fill, colour = line,alpha = 0.4)+scale_y_continuous(name = "Post Viewers",breaks = seq(0, 160000, 10000),limits=c(0, 160000))+scale_x_discrete(name = "Type of Post") + ggtitle("Post viewers by Type")
+
+```
+![](/Users/nayanikadogra/workspace/smpe-project/results/obj4.png)
+
+```r
+obj5<-read.csv("obj5.csv", header = TRUE)
+inter=c(0)
+views=c(0)
+v=c(0)
+I=c(0)
+for(i in 0:23)
+  {v[i]=0
+  I[i]=0
+  inter[i]=0
+  views[i]=0}
+for(i in 1:500)
+  { v[obj5$Post.Hour[i]]=v[obj5$Post.Hour[i]]+1
+I[obj5$Post.Hour[i]]=I[obj5$Post.Hour[i]]+1
+ views[obj5$Post.Hour[i]]=views[obj5$Post.Hour[i]]+obj5$post.viewers[i]
+inter[obj5$Post.Hour[i]]=inter[obj5$Post.Hour[i]]+obj5$Total.Interactions[i]}
+
+  for(i in 0:23) 
+  {views[i]=views[i]/v[i]
+    inter[i]=inter[i]/I[i]}
+
+df= as.data.frame(cbind(Overall.Cond= 1:23,views))
+df
+df.freq= as.vector(rep(df$Overall.Cond, df$views))
+hist(df.freq,breaks = 24,plot = TRUE,col="green",xlim = c(1,23),main="post views average per one hour intervals ",xlab="time of the post",ylab="post views average ")
+axis(side=2, at=c(0:8)*5000)
+axis(side=1, at=c(0:23))
+
+df= as.data.frame(cbind(Overall.Cond= 1:23,inter))
+df
+df.freq= as.vector(rep(df$Overall.Cond, df$inter))
+hist(df.freq,breaks = 24,plot = TRUE,col="green",xlim = c(1,23),main="interactions average per one hour intervals ",xlab="time of the post",ylab="interactions average")
+axis(side=2, at=c(0:9)*500)
+axis(side=1, at=c(0:23))
+
+```
+
+![](/Users/nayanikadogra/workspace/smpe-project/results/obj5.png)
+
+![](/Users/nayanikadogra/workspace/smpe-project/results/obj55.png)
 ## Conclusion
 
 

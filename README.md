@@ -25,6 +25,6 @@
    omitted due to confidentiality issues.
 
 
-## Number of Instances: 500
+   Number of Instances: 500
 
-## Number of Attributes: 19
+   Number of Attributes: 19

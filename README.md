@@ -1,14 +1,30 @@
+# Facebook Performance Metrics
 
-running tests on facebook data 
+   This dataset is public available for research. The details are described in (Moro et al., 2016).
+   Please include this citation if you plan to use this database: 
 
-Objectives:
+   (Moro et al., 2016) S. Moro, P. Rita and B. Vala. Predicting social media performance metrics and evaluation 
+   of the impact on brand building: A data mining approach. Journal of Business Research, Elsevier, In press.
+ 
+   Available at: http://dx.doi.org/10.1016/j.jbusres.2016.02.010
 
-1- 95% confidence interval for the post views case of paid post, which will give us the number of views we have to expect in case of advertised post.
+   Created by: Sérgio Moro, Paulo Rita and Bernardo Vala (ISCTE-IUL) @ 2016
+   
+## Past Usage
 
-2-same as 1 but for non paid posts so we can compare paid and not paid post , and drive out how much facebook advertisement is effective.
+   The full dataset was described and analyzed in:
 
-3- correlation of post views and number of interaction . to show that the number of views should be directly correlated to the interaction.
+   S. Moro, P. Rita and B. Vala. Predicting social media performance metrics and evaluation of the impact on 
+   brand building: A data mining approach. Journal of Business Research, Elsevier, In press, Available online 
+   since 28 February 2016.
 
-4- type of the post and number of interaction and post views in boxplot graphs (fairly easy but the analysis of such data is lovely ), i will try to find a reference that have talked about this thing and compare both results.
+## Relevant Information:
 
-5- time of the post and views correlation and boxplot of the interaction according to time, i will prefer to take a time slot of 2 hour over 12:00 pm to 12:00 pm to excludes the out-layers, i guess we should end up with a peak at 8:00 - 10:00 pm.
+   The data is related to posts' published during the year of 2014 on the Facebook's page of a renowned cosmetics brand.
+   This dataset contains 500 of the 790 rows and part of the features analyzed by Moro et al. (2016). The remaining were 
+   omitted due to confidentiality issues.
+
+
+## Number of Instances: 500
+
+## Number of Attributes: 19

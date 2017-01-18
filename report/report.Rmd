@@ -263,7 +263,7 @@ ggtitle("Post viewers by Type")
 ```
 The graphs generated from the above two codes are shown below:
 
-![](../results/obj3c.png)
+![](../results/obj3c.jpg)
 
 
 We observe from the graph that the links and videos have more viewers than interactions whereas photos and status have more interactions than interactions. This can be explained by the fact that the Facebook users need to click on the links or watch the video to get the information and so there is less interaction. On the opposite, the users can immediately get all the information when they see a status post or a picture which implies a smaller number of viewers and more interactions.

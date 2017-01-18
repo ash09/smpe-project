@@ -263,14 +263,15 @@ ggtitle("Post viewers by Type")
 ```
 The graphs generated from the above two codes are shown below:
 
-![](../results/obj3c.jpg)
+![](../results/obj3c.png)
 
 
 We observe from the graph that the links and videos have more viewers than interactions whereas photos and status have more interactions than interactions. This can be explained by the fact that the Facebook users need to click on the links or watch the video to get the information and so there is less interaction. On the opposite, the users can immediately get all the information when they see a status post or a picture which implies a smaller number of viewers and more interactions.
 
 
 ### Correlation between number of views on a post and number of interactions with the post.
-Correlation explains how the two values change together. We can analyze that the interactions and views go together which is obvious as the interactions are sum of  views, likes, share and comments on the post. To find this correlation between viewers and the interactions they had we used the following code: 
+Correlation explains how the two values change together. We can analyze that the interactions and views go together which is obvious as the interactions are sum of likes, share and comments on the post. To find this correlation between viewers and the interactions they had we used the following code: 
+
 
 ```r
 
@@ -287,7 +288,7 @@ The graph generated is the following:
 
 ![](../results/obj4.jpg)
 
-From the graph it is clear that the viewers and interactions are directly related. If there will be more viewers for a post there is a possibility of more interactions from them on the post so it explains the drastic increase of the number of interactions when the number of views increases. Most of the posts cluttered to the left have less viewers and interactions because these posts are by a company which is not too widespread so the post reaches only few people. Whereas some posts on the right have as less viewers and significantly more interactions meaning that the content of the post was highly liked by the viewers so they did not just view it but maybe liked it, commented on it and shared it as well.
+From the graph it is clear that the viewers and interactions are directly related. If there will be more viewers for a post there is a possibility of more interactions from them on the post so it explains the increase of the number of interactions when the number of views increases. Most of the posts cluttered to the left have less viewers and interactions because these posts are by a company which is not too widespread so the post reaches only few people. Whereas some posts on the right have as less viewers and significantly more interactions meaning that the content of the post was highly liked by the viewers so they did not just view it but maybe liked it, commented on it and shared it as well.
 
 
 ### Relation between time of the post and number of views on the post.
@@ -339,5 +340,14 @@ axis(side=1, at=c(0:23))
 The posts of the cosmetic company can be viewed anywhere in the world. Since there are many timezone, it is impossible to predict when the average value of viewers and interactions will be high or low.
 
 ## Conclusion
+From all the analysis we conclude the follwoing things:
+
+1. Facebook advertising is beneficial as it directs these posts to interested users who are more likely to buy it.
+
+2. The photos and status are more likely to be viewed, liked, shared and commented on.
+
+3. The more viewer a post had more will be the interactions with it.
+
+4. A post can be viewed in different countries and thus different timezones so the views and interactions on the post cannot be predicted with certainity.
 
 

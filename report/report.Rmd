@@ -3,11 +3,11 @@ title: "Analysis of Facebook Posts"
 author: "Ali Jawad Fahs, Ashley Lesdalons, Nayanika Dogra and Onss Bousbih"
 date: "16th January 2017"
 output:
-  html_document: default
   pdf_document:
     fig_crop: no
     number_sections: yes
     toc: yes
+  html_document: default
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=TRUE)

@@ -13,12 +13,12 @@ output:
 knitr::opts_chunk$set(echo=TRUE)
 ```
 
-## Introduction
+# Introduction
 Since the creation of social networks such as Facebook and Twitter, the number of users has increased from 1 billion in 2013 to almost 2 billion today, predicting even a bigger increase in the next years. Considering this rapid development, social media may become the most important media channel for brands to reach their clients in the near future.
 
 Realizing the potential of Internet-based social networks, companies use social networks  to leverage their businesses. Several studies have been conducted to predict the relation between the online publications on social networks and the impact of such publications measured by users' interactions. We made a similar study to understand the impact of advertisement on Facebook on the number of views and interactions to find out the benefits of putting advertisements of social networks.  
 
-### DataSet
+## DataSet
 The data set studied in this paper is a representative data set of published posts on the Facebook's page of a renowned cosmetic brand between the 1st of January and the 31st of December in 2014. It was found on the UC Irvine Machine Learning Repository.
 The data set comprises of the following attributes:
  
@@ -44,7 +44,7 @@ The data set comprises of the following attributes:
 
 * Total Interaction: It gives the summation of the comment, like and share.
 
-### Observations
+## Observations
 Using the above data set we verified the following observations:
 
 * Comaprison of Number of views to be expected in case of paid posts and unpaid posts. This observation helped us in finding out the effectiveness of advertising on Facebook.
@@ -56,7 +56,7 @@ Using the above data set we verified the following observations:
 
 * Relation between time of the post and number of views on the post.
 
-## Material and Methods
+# Material and Methods
 
 * Mean: It is the average and is computed as the sum of all the observed outcomes  from the sample divided by the total number of events. It is given as:
 
@@ -84,13 +84,13 @@ $$  cov(X,Y)=E[(X- \mu x)(Y- \mu y)] $$
 $$ \rho x,y = corr(X,Y) = \frac{cov(X,Y)}{  \rho _{x}   \rho _{y} } =  \frac{E[(X- \mu x)(Y- \mu y)]}{\rho _{x}   \rho _{y}}  $$
 
 
-## Statistical Analysis of the Data
+# Statistical Analysis of the Data
 In this section, the above mentioned observations are plotted and analyzed. 
 
-### Comaprison of Number of views to be expected in case of paid posts and unpaid posts.
+## Comaprison of Number of views to be expected in case of paid posts and unpaid posts.
 We separated our data into two part i.e paid posts data and unpaid posts data.The set of paid posts had 139 instances and unpaid set had 361 instances. 
 
-#### Paid Posts
+### Paid Posts
 Next, we calculated the number of occurrences of the number of post viewers in 1000 ranges (i.e 0-1000, 1000-2000 and so on). The code for doing so in case of paid posts is shown below:
 
 ```r
@@ -119,7 +119,7 @@ The graph generated in case of paid posts is as shown below:
 
 
 
-#### Non-Paid Posts
+### Non-Paid Posts
 Similarly, the number of occurrences of the number of post viewers in 1000 ranges was calculated for unpaid posts using the code which is shown below:
 
 ```r
@@ -146,7 +146,7 @@ The graph generated in case of unpaid posts is shown below:
 
 ![](../results/obj2.png)
 
-#### Comparison between paid and non-paid posts
+### Comparison between paid and non-paid posts
 To observe the difference between the number of viewers in case of paid and unpaid posts, we calculated the mean and standard deviation for each. The code to do so is shown below:
 
 ```r
@@ -231,7 +231,7 @@ A significant difference in case of number of viewers for paid and unpaid posts 
 
 The reason for this significant difference is because Facebook directs paid posts towards the interested users and not just all users. This is beneficial for the party which is advertising as the people who are interested in a particular product are more likely to buy it so if they see the posts related to the product the advertising company will have more customers.
 
-### Relation between type of a post and number of views and interactions associated with it.
+## Relation between type of a post and number of views and interactions associated with it.
 In this section, we will observe how the type of post affects its views and interactions. To observe this effect we decided to plot the number of viewers with type of post as well as number of interactions with types of posts. 
 
 The following code plots number of viewers with type of post:
@@ -269,7 +269,7 @@ The graphs generated from the above two codes are shown below:
 We observe from the graph that the links and videos have more viewers than interactions whereas photos and status have more interactions than interactions. This can be explained by the fact that the Facebook users need to click on the links or watch the video to get the information and so there is less interaction. On the opposite, the users can immediately get all the information when they see a status post or a picture which implies a smaller number of viewers and more interactions.
 
 
-### Correlation between number of views on a post and number of interactions with the post.
+## Correlation between number of views on a post and number of interactions with the post.
 Correlation explains how the two values change together. We can analyze that the interactions and views go together which is obvious as the interactions are sum of likes, share and comments on the post. To find this correlation between viewers and the interactions they had we used the following code: 
 
 
@@ -291,7 +291,7 @@ The graph generated is the following:
 From the graph it is clear that the viewers and interactions are directly related. If there will be more viewers for a post there is a possibility of more interactions from them on the post so it explains the increase of the number of interactions when the number of views increases. Most of the posts cluttered to the left have less viewers and interactions because these posts are by a company which is not too widespread so the post reaches only few people. Whereas some posts on the right have as less viewers and significantly more interactions meaning that the content of the post was highly liked by the viewers so they did not just view it but maybe liked it, commented on it and shared it as well.
 
 
-### Relation between time of the post and number of views on the post.
+## Relation between time of the post and number of views on the post.
 In this section we make an analysis on the time of the post and the number of viewers and interaction on the post at that time.
 
 ```r
@@ -339,7 +339,7 @@ axis(side=1, at=c(0:23))
 
 The posts of the cosmetic company can be viewed anywhere in the world. Since there are many timezone, it is impossible to predict when the average value of viewers and interactions will be high or low.
 
-## Conclusion
+# Conclusion
 From all the analysis we conclude the follwoing things:
 
 1. Facebook advertising is beneficial as it directs these posts to interested users who are more likely to buy it.
